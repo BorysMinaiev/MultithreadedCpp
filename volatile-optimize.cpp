@@ -15,6 +15,7 @@ void first_thread() {
 
 void second_thread() {
     // I hoped this variable will be optimized out and this cycle will run forever
+    // but if we remove everything from cycle, it will work as expceted
     while (!first_thread_done) {
         std::cerr << "second waited ..." << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
